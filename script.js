@@ -32,7 +32,7 @@ function cargarProductos() {
         divProducto.id = productoId;
         
         const mensajeWhatsApp = `Hola, quiero comprar ${producto.nombre}`;
-        const enlaceWhatsApp = `https://wa.me/qr/Z4SVIWQIQDZQE1?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        const enlaceWhatsApp = `https://wa.me/Z4SVIWQIQDZQE1?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
         divProducto.innerHTML = `
             <img src="${imagen}" alt="${producto.nombre}" aria-label="Imagen de ${producto.nombre}">
@@ -73,7 +73,7 @@ function loadFilteredProducts(filteredProducts) {
         divProducto.id = productoId;
         
         const mensajeWhatsApp = `Hola, quiero comprar ${producto.nombre}`;
-        const enlaceWhatsApp = `https://wa.me/qr/Z4SVIWQIQDZQE1?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        const enlaceWhatsApp = `https://wa.me/Z4SVIWQIQDZQE1?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
         divProducto.innerHTML = `
             <img src="${imagen}" alt="${producto.nombre}" aria-label="Imagen de ${producto.nombre}">
