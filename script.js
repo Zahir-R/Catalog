@@ -32,7 +32,7 @@ function renderProductos(productosArray) {
         const productoId = `producto-${producto.nombre.toLowerCase().replace(/\s+/g, '-')}`;  // Unique product ID based on name
         const imagen = producto.imagen || 'image/placeholder.jpg';  // Imagen de reemplazo si no existe
 
-        const mensajeWhatsApp = `Hola, quiero comprar ${producto.nombre}`;
+        const mensajeWhatsApp = `Hola, me gustaría comprar plantas de ${producto.nombre}`;
         const enlaceWhatsApp = `https://wa.me/59173999401?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
         const divProducto = document.createElement('div');
