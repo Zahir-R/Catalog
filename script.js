@@ -2,7 +2,7 @@ const productos = [
     {
         nombre: "Aromo",
         descripcion: "Planta que proporciona sombra, de crecimiento rápido.",
-        precio: 10,  // Store prices as numbers
+        precio: 10, 
         imagen: "image/Aromo.jpg"
     },
     {
@@ -21,16 +21,16 @@ const productos = [
 
 function renderProductos(productosArray) {
     const contenedor = document.getElementById('catalogo');
-    contenedor.innerHTML = '';  // Clear the existing catalog
+    contenedor.innerHTML = ''; 
 
     if (productosArray.length === 0) {
-        contenedor.innerHTML = '<p>No products found</p>';
+        contenedor.innerHTML = '<p>No se encontraron elementos</p>';
         return;
     }
 
     productosArray.forEach((producto, index) => {
-        const productoId = `producto-${producto.nombre.toLowerCase().replace(/\s+/g, '-')}`;  // Unique product ID based on name
-        const imagen = producto.imagen || 'image/placeholder.jpg';  // Imagen de reemplazo si no existe
+        const productoId = `producto-${producto.nombre.toLowerCase().replace(/\s+/g, '-')}`; 
+        const imagen = producto.imagen;
 
         const mensajeWhatsApp = `Hola, me gustaría comprar plantas de ${producto.nombre}`;
         const enlaceWhatsApp = `https://wa.me/59173999401?text=${encodeURIComponent(mensajeWhatsApp)}`;
@@ -53,18 +53,16 @@ function renderProductos(productosArray) {
     });
 }
 
-function filterProducts() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();  // Get the search query
-    const filteredProducts = productos.filter(producto => {
-        return producto.nombre.toLowerCase().includes(searchInput);  // Only filter by product name
+function filtrarProductos() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();  
+    const productosEncontrados = productos.filter(producto => {
+        return producto.nombre.toLowerCase().includes(searchInput); 
     });
 
-    // Load filtered products
-    renderProductos(filteredProducts);
+    renderProductos(productosEncontrados);
 }
 
-// Cargar los productos al cargar la página
 window.onload = () => {
-    renderProductos(productos);  // Initially load all products
-    document.getElementById('searchInput').addEventListener('input', filterProducts);  // Event listener for search input
+    renderProductos(productos); 
+    document.getElementById('searchInput').addEventListener('input', filtrarProductos); 
 };
