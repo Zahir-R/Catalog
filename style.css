@@ -1,9 +1,7 @@
-/* Global reset */
 * {
     box-sizing: border-box;
 }
 
-/* Ensure the body takes full height */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -14,7 +12,6 @@ body {
     min-height: 100vh;  /* Ensures footer is at the bottom */
 }
 
-/* Header */
 header {
     background-color: #333;
     color: white;
@@ -22,7 +19,6 @@ header {
     text-align: center;
 }
 
-/* Catalog Section */
 #catalogo {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -31,7 +27,6 @@ header {
     flex-grow: 1;  /* This will push the footer down */
 }
 
-/* Product Card */
 .producto {
     background-color: white;
     border: 1px solid #ddd;
@@ -68,7 +63,6 @@ header {
     font-weight: bold;
 }
 
-/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -78,7 +72,6 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-/* Contact Section in Footer */
 footer .contacto {
     margin-bottom: 10px;
 }
@@ -113,7 +106,7 @@ footer .contacto a[href^="mailto:"]:hover {
     color: #155813;
 }
 
-/* Button styling */
+/* Button */
 .pedir-btn {
     background-color: #4CAF50;
     color: white;
