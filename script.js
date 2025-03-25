@@ -12,25 +12,43 @@ const productos = [
         imagen: "image/Castaña.jpg"
     },
     {
-        nombre: "Moringa",
-        descripcion: "Planta medicinal, utilizada para tratar enfermedades respiratorias.",
+        nombre: "Achachairú",
+        descripcion: "Planta frutal.",
         precio: 10,
-        imagen: "image/Moringa.jpg"
+        imagen: "image/Achachairú.jpeg"
+    },
+    {
+        nombre: "Carambola",
+        descripcion: "Planta frutal.",
+        precio: 10,
+        imagen: "image/Carambola.jpeg"
+    },
+    {
+        nombre: "Cacao",
+        descripcion: "Planta frutal.",
+        precio: 10,
+        imagen: "image/Cacao.png"
+    },
+    {
+        nombre: "Copoazú",
+        descripcion: "Planta frutal.",
+        precio: 10,
+        imagen: "image/Copoazú.jpeg"
     }
 ];
 
 function renderProductos(productosArray) {
     const contenedor = document.getElementById('catalogo');
-    contenedor.innerHTML = ''; 
+    contenedor.innerHTML = '';
 
     if (productosArray.length === 0) {
-        contenedor.innerHTML = '<p>No se encontraron elementos</p>';
+        contenedor.innerHTML = '<p>No se encontraron productos.</p>';
         return;
     }
 
-    productosArray.forEach((producto, index) => {
+    productosArray.forEach((producto) => {
         const productoId = `producto-${producto.nombre.toLowerCase().replace(/\s+/g, '-')}`; 
-        const imagen = producto.imagen;
+        const imagen = producto.imagen; 
 
         const mensajeWhatsApp = `Hola, me gustaría comprar plantas de ${producto.nombre}`;
         const enlaceWhatsApp = `https://wa.me/59173999401?text=${encodeURIComponent(mensajeWhatsApp)}`;
@@ -53,16 +71,16 @@ function renderProductos(productosArray) {
     });
 }
 
-function filtrarProductos() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();  
-    const productosEncontrados = productos.filter(producto => {
+function filterProducts() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase(); 
+    const filteredProducts = productos.filter(producto => {
         return producto.nombre.toLowerCase().includes(searchInput); 
     });
 
-    renderProductos(productosEncontrados);
+    renderProductos(filteredProducts);
 }
 
 window.onload = () => {
     renderProductos(productos); 
-    document.getElementById('searchInput').addEventListener('input', filtrarProductos); 
+    document.getElementById('searchInput').addEventListener('input', filterProducts); 
 };
